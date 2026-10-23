@@ -15,9 +15,35 @@ android {
         versionName = "0.2.0"
     }
 
+    // Release signing uses a keystore kept outside the repo. Override the paths with
+    // -PariaKeystore=... / -PariaKeystorePassFile=...; without a keystore the release
+    // build is left unsigned.
+    val keystore = file(
+        providers.gradleProperty("ariaKeystore")
+            .getOrElse("${System.getProperty("user.home")}/.android-release/aria-air.jks")
+    )
+    val passFile = file(
+        providers.gradleProperty("ariaKeystorePassFile")
+            .getOrElse("${System.getProperty("user.home")}/.android-release/aria-air.pass")
+    )
+    val canSign = keystore.exists() && passFile.exists()
+
+    signingConfigs {
+        if (canSign) {
+            create("release") {
+                val password = passFile.readText().trim()
+                storeFile = keystore
+                storePassword = password
+                keyAlias = "aria-air"
+                keyPassword = password
+            }
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
+            if (canSign) signingConfig = signingConfigs.getByName("release")
         }
     }
 
