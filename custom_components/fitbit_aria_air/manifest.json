@@ -1,0 +1,19 @@
+{
+  "domain": "fitbit_aria_air",
+  "name": "Fitbit Aria Air",
+  "bluetooth": [
+    {
+      "local_name": "Aria Air",
+      "connectable": true
+    }
+  ],
+  "codeowners": [],
+  "config_flow": true,
+  "dependencies": ["bluetooth_adapters"],
+  "documentation": "https://github.com/BigWebstas/ha-fitbit-aria-air",
+  "integration_type": "device",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/BigWebstas/ha-fitbit-aria-air/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

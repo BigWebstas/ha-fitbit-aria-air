@@ -1,0 +1,34 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Artwork from assets/icon.svg (256 units), scaled into the 66dp adaptive safe zone. -->
+    <group
+        android:scaleX="0.4"
+        android:scaleY="0.4"
+        android:translateX="2.8"
+        android:translateY="2.8">
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M72,52h112a16,16 0 0 1 16,16v32a16,16 0 0 1 -16,16h-112a16,16 0 0 1 -16,-16v-32a16,16 0 0 1 16,-16z" />
+        <path
+            android:fillColor="#0E9AA7"
+            android:pathData="M80,68h6a4,4 0 0 1 4,4v24a4,4 0 0 1 -4,4h-6a4,4 0 0 1 -4,-4v-24a4,4 0 0 1 4,-4zM104,68h6a4,4 0 0 1 4,4v24a4,4 0 0 1 -4,4h-6a4,4 0 0 1 -4,-4v-24a4,4 0 0 1 4,-4zM146,68h6a4,4 0 0 1 4,4v24a4,4 0 0 1 -4,4h-6a4,4 0 0 1 -4,-4v-24a4,4 0 0 1 4,-4zM125.5,96a4.5,4.5 0 1 1 9.0,0a4.5,4.5 0 1 1 -9.0,0z" />
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M74,140h28a18,18 0 0 1 18,18v28a18,18 0 0 1 -18,18h-28a18,18 0 0 1 -18,-18v-28a18,18 0 0 1 18,-18zM154,140h28a18,18 0 0 1 18,18v28a18,18 0 0 1 -18,18h-28a18,18 0 0 1 -18,-18v-28a18,18 0 0 1 18,-18z" />
+        <path
+            android:pathData="M84,160L108,178L96,188L96,156L108,166L84,184"
+            android:strokeColor="#0E9AA7"
+            android:strokeWidth="7"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+        <path
+            android:pathData="M154,160a16,16 0 0 1 0,24M166,152a28,28 0 0 1 0,40"
+            android:strokeColor="#0E9AA7"
+            android:strokeWidth="7"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+    </group>
+</vector>

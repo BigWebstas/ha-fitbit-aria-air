@@ -1,0 +1,70 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "Choose your scale",
+        "description": "Pick an Aria Air that Home Assistant can currently see. If none appear, step on the scale and try again.",
+        "data": {
+          "address": "Scale"
+        }
+      },
+      "key": {
+        "title": "Scale key",
+        "description": "Enter the 16-byte key (32 hex characters) that links {name} to its owner. The README explains how to read it from a Bluetooth log of your own Fitbit app setting the scale up.",
+        "data": {
+          "key": "Key",
+          "unit": "Unit the scale reports in"
+        },
+        "data_description": {
+          "key": "32 hex characters. Spaces, colons and dashes are ignored.",
+          "unit": "The scale sends a plain number. Pick the unit its display shows."
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "That is not a valid 16-byte hex key."
+    },
+    "abort": {
+      "already_configured": "This scale is already set up.",
+      "already_in_progress": "Setup for this scale is already in progress.",
+      "no_devices_found": "No Aria Air was found. Step on the scale, make sure a Bluetooth adapter or proxy is in range, and try again."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Aria Air options",
+        "data": {
+          "unit": "Unit the scale reports in",
+          "always_connect": "Keep trying to connect"
+        },
+        "data_description": {
+          "unit": "Pick the unit the scale's display shows.",
+          "always_connect": "Try to connect every 15 seconds while the scale is in range. Turn this on if weigh-ins are missed, which is common with Bluetooth proxies. It keeps a Bluetooth connection slot busy."
+        }
+      }
+    }
+  },
+  "selector": {
+    "unit": {
+      "options": {
+        "kg": "Kilograms",
+        "lb": "Pounds"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "weight": {
+        "name": "Weight"
+      },
+      "last_weigh_in": {
+        "name": "Last weigh-in"
+      },
+      "connection": {
+        "name": "Connection"
+      }
+    }
+  }
+}

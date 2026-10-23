@@ -1,0 +1,4 @@
+<resources>
+    <!-- Follows the system light/dark setting. -->
+    <style name="AppTheme" parent="@android:style/Theme.DeviceDefault.DayNight" />
+</resources>
