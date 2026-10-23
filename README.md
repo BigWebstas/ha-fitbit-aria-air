@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/icon.svg" alt="Fitbit Aria Air icon" width="128">
+</p>
+
 # Fitbit Aria Air for Home Assistant
 
 Read your **Fitbit Aria Air (FB203)** scale locally over Bluetooth, with no Fitbit
