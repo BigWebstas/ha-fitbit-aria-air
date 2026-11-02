@@ -16,7 +16,11 @@ import time
 from bleak import BleakClient
 from bleak.backends.device import BLEDevice
 from bleak.exc import BleakError
-from bleak_retry_connector import BleakClientWithServiceCache, establish_connection
+from bleak_retry_connector import (
+    BleakClientWithServiceCache,
+    BleakOutOfConnectionSlotsError,
+    establish_connection,
+)
 
 from homeassistant.components import bluetooth
 from homeassistant.components.bluetooth import (
@@ -224,7 +228,7 @@ class AriaAirCoordinator:
                     device,
                     self.entry.title,
                     disconnected_callback=lambda _client: disconnected.set(),
-                    max_attempts=6,
+                    max_attempts=3,
                     ble_device_callback=lambda: self._async_get_device() or device,
                 )
                 self._async_set_status("Connected, waiting for a weigh-in")
@@ -251,7 +255,10 @@ class AriaAirCoordinator:
         except (BleakError, TimeoutError, OSError) as err:
             _LOGGER.debug("%s: session ended: %s", self.address, err)
             self.failed_sessions += 1
-            self._async_set_status(f"Could not connect: {type(err).__name__}")
+            if isinstance(err, BleakOutOfConnectionSlotsError):
+                self._async_set_status("No free Bluetooth connection slot")
+            else:
+                self._async_set_status(f"Could not connect: {type(err).__name__}")
         finally:
             if client is not None:
                 try:

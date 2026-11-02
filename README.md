@@ -91,6 +91,12 @@ and disconnects shortly after. Details are in [docs/PROTOCOL.md](docs/PROTOCOL.m
   Enable debug logging (`logger: logs: custom_components.fitbit_aria_air: debug`).
   If the log shows connections but no readings, try the "connect on every
   advertisement" option.
+- **"No free Bluetooth connection slot"** (`BleakOutOfConnectionSlotsError`).
+  Every adapter or proxy that can hear the scale is full. An ESPHome proxy has
+  3 slots, a local adapter often fewer, and other devices (plugs, sensors,
+  locks) hold them. Free a slot by turning off "Keep trying to connect", adding
+  a proxy near the scale, or disconnecting something else. Home Assistant's
+  Bluetooth diagnostics page lists each adapter's free slots.
 - **"ignoring unreadable message".** The key is wrong or the scale was re-linked
   since the key was captured.
 - **Wrong numbers.** Check the unit option against the scale's display.

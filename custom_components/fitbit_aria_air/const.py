@@ -23,10 +23,10 @@ CCCD_UUID = "00002902-0000-1000-8000-00805f9b34fb"
 CCCD_NOTIFY = b"\x01\x00"
 
 # Session timing, in seconds.
-CONNECT_MAX = 60  # give up connecting; the scale sleeps soon after waking
+CONNECT_MAX = 30  # give up connecting; the scale sleeps soon after waking
 DISCONNECT_MAX = 10  # a dropped disconnect reply must not hold the session open
 SESSION_MAX = 120  # hard cap for one connection
-NO_DATA_TIMEOUT = 45  # give up if nothing arrives after subscribing
+NO_DATA_TIMEOUT = 30  # give up if nothing arrives after subscribing
 IDLE_AFTER_READING = 20  # disconnect this long after the last reading
 RETRY_COOLDOWN = 3  # pause between sessions
 ALWAYS_CONNECT_COOLDOWN = 15  # spacing when "always connect" is enabled
